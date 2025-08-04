@@ -13,8 +13,7 @@ export default function Navbar() {
         <Link href="/" className={styles.link}>HOME</Link>
         <Link href="/about" className={styles.link}>ABOUT</Link>
         <Link href="/projects" className={styles.link}>PROJECTS</Link>
-        <Link href="/products" className={styles.link}>TEAM</Link>
-        <Link href="/partners" className={styles.link}>PARTNERS</Link>
+        <Link href="/products" className={styles.link}>PRODUCTS</Link>
         <Link href="/contact" className={styles.link}>CONTACT</Link>
       </nav>
     </header>

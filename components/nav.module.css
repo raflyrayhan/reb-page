@@ -4,10 +4,9 @@
   top: 0;
   width: 100%;
   z-index: 50;
-  padding: 16px 32px;
-  background-color: #ffffffc6;
-  backdrop-filter: blur(12px);
-  color: #980303; /* gray-800 */
+  padding: 7px 32px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgb(18, 18, 18));
+  color: #ffffff; /* gray-800 */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,14 +19,15 @@
   align-items: center;
   gap: 8px;
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 /* Navigation links container */
 .navLinks {
+  font-size: .69rem;
   display: flex;
   gap: 2rem;
-  font-weight: 600;
+  font-weight: 350;
   align-items: center;
 }
 

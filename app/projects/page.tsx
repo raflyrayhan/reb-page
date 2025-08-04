@@ -15,7 +15,7 @@ type Project = {
 };
 
 const projects: Project[] = [
-  {
+ {
     title: 'WET CALIBRATION 2 unit 16” ANSI 600#',
     year: '2017',
     location: 'Randu Blatung, Cepu, Central Java',
@@ -89,12 +89,10 @@ const projects: Project[] = [
 ];
 
 export default function ExperienceCard() {
-  const [expanded, setExpanded] = useState<number | null>(null);
-  const [currentIndexes, setCurrentIndexes] = useState<number[]>(projects.map(() => 0));
+  const [currentIndexes, setCurrentIndexes] = useState<number[]>(
+    projects.map(() => 0)
+  );
   const [modalImage, setModalImage] = useState<string | null>(null);
-
-  const toggleExpanded = (index: number) =>
-    setExpanded((prev) => (prev === index ? null : index));
 
   const nextImage = (index: number) => {
     setCurrentIndexes((prev) => {
@@ -117,86 +115,111 @@ export default function ExperienceCard() {
 
   return (
     <>
-      <section className="relative h-[70vh] w-full bg-gradient-to-r from-white to-red-700">
-        <div className="absolute inset-0 flex items-center justify-between px-12 text-white z-10">
-          <div>
-             <br/>
-            <Image src="/REB Logo.png" alt="logo" width={150} height={150} />
-            <h1 className="text-4xl md:text-6xl font-bold"><strong className='text-red-700'>Projects</strong> <strong className='text-5xl text-black'>&</strong> <strong className='text-gray-500'>Experience</strong></h1>
-            <p className="text-lg mt-2 text-black">Selected Highlights from Our Work</p>
-          </div>
-        </div>
+      {/* Header */}
+      <section className="max-w-7xl mx-auto px-6 pt-20 pb-12 text-left">
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-2">
+          <span className="text-red-700">Projects</span>{' '}
+          <span className="text-black">&</span>{' '}
+          <span className="text-gray-600">Experience</span>
+        </h1>
+        <p className="text-base md:text-lg text-gray-500">
+          Selected Highlights from Our Work
+        </p>
       </section>
 
-      <div className="w-full min-h-screen bg-gray-50 px-4 md:px-12 py-16">
+      {/* Cards */}
+      <div className="w-full bg-gray-50 px-4 md:px-12 pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
-              whileHover={{ scale: 1.02 }}
-              className="rounded-lg shadow-lg bg-white overflow-hidden"
+              whileHover={{ scale: 1.01 }}
+              className="rounded-lg shadow-md bg-white overflow-hidden transition-all duration-300"
             >
-              <div className="relative h-56 w-full">
+              {/* Image with controls */}
+              <div className="relative h-72 w-full">
                 <Image
                   src={project.images[currentIndexes[idx]]}
                   alt={project.title}
                   fill
                   className="object-cover cursor-pointer"
-                  onClick={() => setModalImage(project.images[currentIndexes[idx]])}
+                  onClick={() =>
+                    setModalImage(project.images[currentIndexes[idx]])
+                  }
                 />
-                <button onClick={() => prevImage(idx)} className="absolute left-2 top-1/2 -translate-y-1/2 bg-red-700/80 px-4 py-1 rounded">‹</button>
-                <button onClick={() => nextImage(idx)} className="absolute right-2 top-1/2 -translate-y-1/2 bg-red-700/80 px-4 py-1 rounded">›</button>
-              </div>
-              <div className="p-4">
-                <h2 className="text-xl font-bold text-gray-800 mb-1">{project.title}</h2>
-                <p className="text-sm text-gray-500 mb-1">{project.location}</p>
-                <p className="text-sm text-gray-500">{project.endUser}</p>
-                <p className="text-sm text-gray-400">{project.year}</p>
-                <button
-                  onClick={() => toggleExpanded(idx)}
-                  className="text-sm text-blue-600 mt-2 hover:underline"
-                >
-                  {expanded === idx ? 'Tutup Detail' : 'Lihat Detail'}
-                </button>
-                {expanded === idx && (
-                  <div className="mt-4 text-sm text-gray-700">
-                    <p><strong>Client:</strong> {project.client}</p>
-                    <p className="mt-2 font-semibold">Scope of Work:</p>
-                    <ul className="list-disc list-inside">
-                      {project.scope.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
+                {project.images.length > 1 && (
+                  <>
+                    <button
+                      onClick={() => prevImage(idx)}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-red-700 text-white px-2 py-1 rounded-full text-lg hover:bg-red-800"
+                    >
+                      ‹
+                    </button>
+                    <button
+                      onClick={() => nextImage(idx)}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-red-700 text-white px-2 py-1 rounded-full text-lg hover:bg-red-800"
+                    >
+                      ›
+                    </button>
+                  </>
                 )}
+              </div>
+
+              {/* Project Detail */}
+              <div className="p-6">
+                <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+                  {project.title}
+                </h2>
+                <p className="text-sm text-gray-500 mb-1">
+                  {project.location}
+                </p>
+                <p className="text-sm text-gray-500 mb-1">
+                  End User: {project.endUser}
+                </p>
+                <p className="text-sm text-gray-500 mb-4">
+                  Year: {project.year}
+                </p>
+
+                <p className="text-sm text-gray-700">
+                  <strong>Client:</strong> {project.client}
+                </p>
+                <p className="text-sm text-gray-700 font-semibold mt-3 mb-1">
+                  Scope of Work:
+                </p>
+                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  {project.scope.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {modalImage && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-            onClick={() => setModalImage(null)}
-          >
-            <div className="relative max-w-3xl w-full">
-              <Image
-                src={modalImage}
-                alt="Preview"
-                width={1000}
-                height={600}
-                className="object-contain rounded shadow-lg mx-auto"
-              />
-              <button
-                className="absolute top-2 right-4 text-white text-3xl"
-                onClick={() => setModalImage(null)}
-              >
-                ×
-              </button>
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Modal Image Preview */}
+      {modalImage && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+          onClick={() => setModalImage(null)}
+        >
+          <div className="relative max-w-3xl w-full px-4">
+            <Image
+              src={modalImage}
+              alt="Preview"
+              width={1000}
+              height={600}
+              className="object-contain rounded shadow-lg"
+            />
+            <button
+              className="absolute top-2 right-4 text-white text-3xl"
+              onClick={() => setModalImage(null)}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
