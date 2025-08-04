@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import emailjs from "emailjs-com";
 
 const initialState = {
   name: "",
@@ -25,13 +26,28 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Use EmailJS to send the email
     try {
-      // Replace with your email API
-      console.log({ name, email, message });
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        message: message,
+      };
+
+      // Replace with your own EmailJS service details
+      const response = await emailjs.send(
+        "service_ob3pabn", // Your EmailJS service ID
+        "template_g7vn6be", // Your EmailJS template ID
+        templateParams,
+        "XissUhOcE2e-mSvv0" // Your EmailJS user ID
+      );
+
+      console.log("Email sent successfully:", response);
       clearState();
       setMessageSent(true);
     } catch (err) {
-      console.error(err);
+      console.error("Error sending email:", err);
     }
   };
 
@@ -86,28 +102,41 @@ export default function ContactPage() {
               Send Message
             </button>
             {messageSent && (
-              <p className="text-green-400 text-sm mt-2">Message Sent! Thank you for contacting us.</p>
+              <p className="text-green-400 text-sm mt-2">
+                Message Sent! Thank you for contacting us.
+              </p>
             )}
           </form>
 
           <div className="space-y-6 text-sm text-black">
-             <div className="w-full mt-8">
-              <Image src="/maps.png" alt="Location Map" className="w-full h-auto rounded-lg" width={350} height={350} />
+            <div className="w-full mt-8">
+              <Image
+                src="/maps.png"
+                alt="Location Map"
+                className="w-full h-auto rounded-lg"
+                width={350}
+                height={350}
+              />
             </div>
             <div>
               <h1 className="text-bold text-[#D32F2F]">Office</h1>
-              Techno Park Industrial Estate 2 Block H 9 No 16 Setu, BSD City  <br/> Tangerang Selatan 15314 Indonesia
-              <br/><br/>
-              <strong className="text-[#D32F2F]">Phone:</strong> (+621) 7568 2120  <br />
+              Techno Park Industrial Estate 2 Block H 9 No 16 Setu, BSD City
+              <br />
+              Tangerang Selatan 15314 Indonesia
+              <br />
+              <br />
+              <strong className="text-[#D32F2F]">Phone:</strong> (+6221) 7568
+              2120 <br />
               <strong className="text-[#D32F2F]">Email:</strong>{" "}
-              <a href="mailto:marketing@reka-energi.com" className="hover:underline text-black">
+              <a
+                href="mailto:marketing@reka-energi.com"
+                className="hover:underline text-black"
+              >
                 marketing@reka-energi.com
               </a>
             </div>
             {/* Image Section */}
-            
           </div>
-         
         </div>
       </div>
     </main>
