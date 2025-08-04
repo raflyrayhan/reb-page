@@ -96,13 +96,12 @@ export default function ContactPage() {
             </div>
             <div>
               <h1 className="text-bold text-[#D32F2F]">Office</h1>
-              Kawasan Industri Taman Tekno 2 - H9/16, 
-              Setu, South Tangerang City, Banten 15314
+              Techno Park Industrial Estate 2 Block H 9 No 16 Setu, BSD City  <br/> Tangerang Selatan 15314 Indonesia
               <br/><br/>
               <strong className="text-[#D32F2F]">Phone:</strong> (+621) 7568 2120  <br />
               <strong className="text-[#D32F2F]">Email:</strong>{" "}
-              <a href="mailto:sales@reka-energi.com" className="hover:underline text-black">
-                sales@reka-energi.com
+              <a href="mailto:marketing@reka-energi.com" className="hover:underline text-black">
+                marketing@reka-energi.com
               </a>
             </div>
             {/* Image Section */}
