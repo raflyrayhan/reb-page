@@ -45,7 +45,7 @@ const projects: Project[] = [
     ]
   },
   {
-    title: 'RS JARGAS MUSI RAWAS',
+    title: 'JARGAS MUSI RAWAS',
     year: '2018',
     location: 'Palembang',
     endUser: 'PT. PERTAGAS',
@@ -59,7 +59,7 @@ const projects: Project[] = [
     ]
   },
   {
-    title: 'RS JARGAS DELI SERDANG',
+    title: 'JARGAS DELI SERDANG',
     year: '2018',
     location: 'Deli Serdang',
     endUser: 'PT. PERTAGAS',
@@ -73,7 +73,7 @@ const projects: Project[] = [
     ]
   },
   {
-    title: 'MRS JARGAS Palembang',
+    title: 'JARGAS Palembang',
     year: '2018',
     location: 'Palembang',
     endUser: 'PT. PERTAGAS',
