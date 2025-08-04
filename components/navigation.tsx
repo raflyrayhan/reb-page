@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <header className={styles.navbar}>
       <div className={styles.logo}>
-        <Image src="/REB Logo.png" alt="Logo" width={99} height={99} />
+        <Image src="/REB.png" alt="Logo" width={99} height={99} />
       </div>
 
       <nav className={styles.navLinks}>
