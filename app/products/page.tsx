@@ -104,8 +104,8 @@ export default function ProductPage() {
                 src={product.image}
                 alt={product.package}
                 width={500}
-                height={300}
-                className="w-full h-full object-cover rounded-b-xl md:rounded-l-none md:rounded-r-xl"
+                height={500}
+                className="w-[60%] h-[60%] object-fill rounded-b-xl md:rounded-l-none md:rounded-r-xl items-end"
               />
             </div>
           </div>

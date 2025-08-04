@@ -51,9 +51,9 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm z-10" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
-          <div className="absolute w-full h-[40vh] bg-white/70 top-1/3 z-5">
+          <div className="absolute w-full h-[40vh] bg-white/20 top-1/3 z-5">
             <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold uppercase text-center mt-10">
-              <strong className="text-black">PT.</strong> <strong className="text-black">REKAYASA</strong> <strong className="text-red-800">ENERGI</strong> <strong className="text-gray-400">BERSAMA</strong>
+              <strong className="text-black">PT.</strong> <strong className="text-black">REKAYASA</strong> <strong className="text-red-800">ENERGI</strong> <strong className="text-gray-700">BERSAMA</strong>
             </h1>
             <p className="mt-4 text-sm sm:text-base md:text-xl text-center text-black">
               Indonesian Engineering Company delivering package solutions for oil & gas and energy sectors since 2018.
@@ -61,7 +61,7 @@ export default function HomePage() {
           </div>
           <a
             href="#about"
-            className="mt-[12rem] border bg-slate-400 border-black px-6 py-2 text-sm uppercase tracking-wider hover:bg-white hover:text-black transition z-10 text-white"
+            className="mt-[12rem] border-none bg-red-600 px-6 py-2 text-sm uppercase tracking-wider hover:bg-white hover:text-black transition z-10 text-white"
           >
             Learn More
           </a>
@@ -86,7 +86,7 @@ export default function HomePage() {
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
             REB (Rekayasa Energi Bersama) is a proudly local Indonesian company, providing smart and reliable package solutions for the power and oil & gas industries since 2018. With passionate engineers and trusted tools, we bring your ideas to life — from design to delivery.
           </p>
-          <a href="/about" className="inline-block mt-6 border border-black px-6 py-2 text-sm uppercase tracking-wider bg-red-600 hover:text-white font-bold transition">
+          <a href="/about" className="inline-block mt-6 border-none px-6 py-2 text-sm uppercase tracking-wider bg-red-600 hover:text-white font-bold transition text-white">
             More About Us
           </a>
         </div>

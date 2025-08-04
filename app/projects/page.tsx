@@ -106,12 +106,190 @@ const projects: Project[] = [
     location: 'Indramayu, Jawa Barat',
     endUser: 'Pertamina Refinery Unit VI Balongan',
     client: 'PT. Kharisma Sinar Utama',
-    images: ['/balongan1.png', '/balongan2.png', '/balongan3.png', '/balongan4.jpg'],
+    images: ['/balongan2.png', '/balongan3.png', '/balongan4.jpg'],
     scope: [
       'Engineering, PMT',
       'Supply Equipment, Piping, Instrumentation, and Skid',
       'Installation Supervision',
       'Start up and Commissioning'
+    ]
+  },
+  {
+    title: 'B2O In-Line Blending System',
+    year: '2019',
+    location: 'Lampung, Surabaya, Sragen, Pontianak',
+    endUser: 'PT. AKR Corporindo, Tbk',
+    client: 'PT. Prakarsalanggeng Maju Bersama',
+    images: ['/blending1.png', '/blending2.png', '/blending3.png', '/blending4.png'],
+    scope: [
+      'Design, Engineering, PMT',
+      'Supply Main Components',
+      'Supply Instrumentation and Electrical',
+      'Installation Supervision',
+      'Start up Commissioning'
+    ]
+  },
+  {
+    title: 'B2O In-Line Blending System',
+    year: '2020',
+    location: 'Banjarmasin, Palaran',
+    endUser: 'PT. AKR Corporindo, Tbk',
+    client: 'PT. Prakarsalanggeng Maju Bersama',
+    images: ['/blendsystem1.png', '/blendsystem2.png', '/blendsystem3.png'],
+    scope: [
+      'Design, Engineering, PMT',
+      'Supply Main Components',
+      'Supply Instrumentation and Electrical',
+      'Installation Supervision',
+      'Start Up and Commissioning'
+    ]
+  },
+  {
+    title: 'Produced Water Treatment Unit WHP-B',
+    year: 'January 5, 2023',
+    location: 'WHP-B Platform',
+    endUser: 'Saka Indonesia Pangkah Ltd.',
+    client: 'PT. Timas Suplindo',
+    images: ['/whp1.png', '/whp2.png'],
+    scope: [
+      'Project Management',
+      'Design Engineering',
+      'Supply Instrument & Valve',
+      'Factory Acceptance Test (FAT) of Supplied Item',
+      'Installation of Instrumentation',
+      'Training',
+      'Pre-Commissioning & Commissioning',
+      'Start-Up',
+      'Documentation'
+    ]
+  },
+  {
+    title: 'EPC Improvement Kapasitas HSRG',
+    year: 'March 8, 2023',
+    location: 'TPPI Tuban Plant',
+    endUser: 'PT. Trans Pacific Petrochemical Indotama',
+    client: 'PT. Timas Suplindo',
+    images: ['/hsrg1.png', '/hsrg2.png'],
+    scope: [
+      'Project Management',
+      'Engineering',
+      'Procurement: Duct Burner, FCV, Insulation, Piping & Manual Valve, Mechanical & Instrument Bulk Material',
+      'Installation & Construction',
+      'Commissioning & Start-up',
+      'Documentation'
+    ]
+  },
+  {
+    title: 'TPPI Revamping Project (Fire Heater)',
+    year: 'August 22, 2023',
+    location: 'TPPI Tuban Plant',
+    endUser: 'PT. Trans Pacific Petrochemical Indotama',
+    client: 'PT. Timas Suplindo',
+    images: ['/revamping1.png'],
+    scope: [
+      'Project Management',
+      'Engineering',
+      'Procurement: Electrical & Instrument',
+      'Installation & Construction',
+      'Commissioning & Start-up',
+      'Documentation'
+    ]
+  },
+  {
+    title: 'TPPI Revamping Project (Interconnecting Ducting',
+    year: 'February 13, 2023',
+    location: 'TPPI Tuban Plant',
+    endUser: 'PT. Trans Pacific Petrochemical Indotama',
+    client: 'PT. Timas Suplindo',
+    images: ['/tppi1.png'],
+    scope: [
+      'Project Management',
+      'Design Engineering',
+      'Commissioning & Start-Up',
+      'Documentation'
+    ]
+  },
+  {
+    title: 'Gas Conditioning Package YY Platform',
+    year: 'March 4, 2022',
+    location: 'YY Platform',
+    endUser: 'PT. PHE ONWJ',
+    client: 'PT. Meindo Elang Indah',
+    images: ['/conditioning1.png'],
+    scope: [
+      'Project Management',
+      'Design & Detail Engineering',
+      'Procurement: Instrument, Equipment, Electrical',
+      'Fabrication',
+      'Assembly Work',
+      'Insulation Work',
+      'Commissioning & Start-up',
+      'Documentation'
+    ]
+  },
+  {
+    title: 'Fuel Gas Filtering Package',
+    year: 'November 7, 2022',
+    location: 'Handil 2 Base Balikpapan',
+    endUser: 'PT. Pertamina Hulu Mahakam',
+    client: 'PT. Yuan Sejati',
+    images: ['/handil1.png'],
+    scope: [
+      'Project Management',
+      'Design Engineering',
+      'Fabrication',
+      'Installation & Assembly',
+      'Factory Acceptance Test (FAT)',
+      'Commissioning & Start-up',
+      'Documentation'
+    ]
+  },
+  {
+    title: 'Acid Gas and H2O Removal',
+    year: 'February, 2023',
+    location: 'Karang Baru, Indramayu',
+    endUser: 'PT. Pertamina EP Asset II, Zona 7',
+    client: 'PT. Bina Sarana Putra',
+    images: ['/h201.png', '/h202.png', '/h203.png', '/h204.png'],
+    scope: [
+      'Project Management',
+      'Licensor Provider',
+      'Design Engineering',
+      'Supply Critical Component',
+      'Fabrication',
+      'Installation',
+      'Commissioning & Start-up',
+      'Documentation',
+      'Training Operation'
+    ]
+  },
+  {
+    title: 'EPC Fasilitas Marine Loading Arm Avtur',
+    year: 'September 21, 2023',
+    location: 'RU VI Balongan',
+    endUser: 'PT. Kilang Pertamina Internasional RU VI Balongan',
+    client: 'PT. Yuan Sejati',
+    images: ['/avtur1.png'],
+    scope: [
+      'Project Management',
+      'Design Engineering',
+      'Fabrication',
+      'Installation',
+      'Commissioning & Start-up',
+      'Documentation'
+    ]
+  },
+  {
+    title: 'De-Aerator Pertamina RU IV Cilacap',
+    year: 'December, 2023',
+    location: 'Cilacap',
+    endUser: 'PT. Kilang Pertamina International',
+    client: 'PT. Timas Suplindo',
+    images: ['/cilacap1.png', '/cilacap2.png', '/cilacap3.png'],
+    scope: [
+      'Licensor Provider',
+      'Design Engineering',
+      'Supply Internal Parts'
     ]
   }
 
@@ -167,7 +345,7 @@ export default function ExperienceCard() {
               className="rounded-lg shadow-md bg-white overflow-hidden transition-all duration-300"
             >
               {/* Image with controls */}
-              <div className="relative h-72 w-full">
+              <div className="relative h-96 w-full">
                 <Image
                   src={project.images[currentIndexes[idx]]}
                   alt={project.title}
