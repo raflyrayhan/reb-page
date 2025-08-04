@@ -245,10 +245,10 @@ const projects: Project[] = [
     ]
   },
   {
-    title: 'Acid Gas and H2O Removal',
+    title: 'Pembangunan CO2 Removal dan DHU Unit',
     year: 'February, 2023',
     location: 'Karang Baru, Indramayu',
-    endUser: 'PT. Pertamina EP Asset II, Zona 7',
+    endUser: 'PT. Pertamina EP Regional II Zona 7',
     client: 'PT. Bina Sarana Putra',
     images: ['/h201.png', '/h202.png', '/h203.png', '/h204.png'],
     scope: [
