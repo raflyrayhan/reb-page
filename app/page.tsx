@@ -51,7 +51,7 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm z-10" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
-          <div className="absolute w-full h-[40vh] bg-white/80 top-1/3 z-5">
+          <div className="absolute w-full h-[40vh] bg-white/70 top-1/3 z-5">
             <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold uppercase text-center mt-10">
               <strong className="text-black">PT.</strong> <strong className="text-black">REKAYASA</strong> <strong className="text-red-800">ENERGI</strong> <strong className="text-gray-400">BERSAMA</strong>
             </h1>
@@ -76,7 +76,7 @@ export default function HomePage() {
             alt="About Preview"
             width={350}
             height={350}
-            className="rounded-lg shadow-lg object-contain max-w-full"
+            className="rounded-lg shadow-lg object-fill max-w-full max-h-full w-[300vh] h-[100vh]"
           />
         </div>
         <div className="w-full md:w-1/2 text-left">

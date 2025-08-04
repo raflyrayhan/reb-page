@@ -85,7 +85,37 @@ const projects: Project[] = [
       'Perform Project Multi Discipline Detail Engineering work',
       'Commissioning Back up'
     ]
+  },
+  {
+    title: "Fuel Gas System For Natuna And Papua",
+    year: "2018",
+    location: '7 Location',
+    endUser: 'PT. PP (Persero)',
+    client: 'PT. Yuan Sejati',
+    images: ['/Natuna1.png', '/Natuna2.png', '/Natuna3.png'],
+    scope: [
+      'Bid Stage Engineering Backup and Support during Proposal Preparation',
+      'Provide PMT personnel for engineering',
+      'Perform Project Multi Discipline Detail Engineering work',
+      'Commissioning Back Up'
+    ]
+  },
+  {
+    title: 'Chemical Injection Package 42-A-301 LPG Odorant Unit',
+    year: '2019',
+    location: 'Indramayu, Jawa Barat',
+    endUser: 'Pertamina Refinery Unit VI Balongan',
+    client: 'PT. Kharisma Sinar Utama',
+    images: ['/balongan1.png', '/balongan2.png', '/balongan3.png', '/balongan4.jpg'],
+    scope: [
+      'Engineering, PMT',
+      'Supply Equipment, Piping, Instrumentation, and Skid',
+      'Installation Supervision',
+      'Start up and Commissioning'
+    ]
   }
+
+  
 ];
 
 export default function ExperienceCard() {

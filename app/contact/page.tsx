@@ -99,7 +99,7 @@ export default function ContactPage() {
               Kawasan Industri Taman Tekno 2 - H9/16, 
               Setu, South Tangerang City, Banten 15314
               <br/><br/>
-              <strong className="text-[#D32F2F]">Phone:</strong> +62 21 89109606 <br />
+              <strong className="text-[#D32F2F]">Phone:</strong> +62 812 1094 917 <br />
               <br/>
               <strong className="text-[#D32F2F]">Fax:</strong> +62 21 89109607 <br />
               <br/>
