@@ -14,14 +14,16 @@ export default function ContactPage() {
   const [{ name, email, message }, setState] = useState(initialState);
   const [messageSent, setMessageSent] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setState((prev) => ({ ...prev, [name]: value }));
   };
 
   const clearState = () => setState({ ...initialState });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       // Replace with your email API
