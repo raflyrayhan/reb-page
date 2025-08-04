@@ -103,7 +103,7 @@ export default function AboutPage() {
   {/* Content */}
    <div className="absolute inset-x-0 top-1/3 z-10 text-center">
     <div className="w-full h-[12rem] bg-white/50 flex flex-col items-center justify-center">
-      <Image src="/REB logo.png" alt="logo" width={180} height={180} />
+      <Image src="/REB logo.png" alt="logo" width={120} height={120} />
       <h1 className="text-6xl md:text-[4rem] font-extrabold text-black mt-5">
         About <strong className="text-black">R</strong>
         <strong className="text-red-800">E</strong>
