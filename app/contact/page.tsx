@@ -1,9 +1,9 @@
+// app/contact/page.tsx
 "use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 const initialState = {
   name: "",
@@ -18,125 +18,137 @@ export default function ContactPage() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
-    setState((prev) => ({ ...prev, [name]: value }));
+    const { name: key, value } = e.target;
+    setState((prev) => ({ ...prev, [key]: value }));
   };
-
-  const clearState = () => setState({ ...initialState });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Use EmailJS to send the email
+    const templateParams = {
+      from_name: name,            // {{from_name}} in your template
+      from_email: email,          // {{from_email}} in From Email & Reply To
+      message: message,           // {{message}} in your template
+      to_email: "marketing@reka-energi.com", 
+    };
+
     try {
-      const templateParams = {
-        from_name: name,
-        from_email: email,
-        message: message,
-      };
-
-      // Replace with your own EmailJS service details
-      const response = await emailjs.send(
-        "service_ob3pabn", // Your EmailJS service ID
-        "template_g7vn6be", // Your EmailJS template ID
+      await emailjs.send(
+        "service_ob3pabn",    // your Service ID
+        "template_g7vn6be",   // your Template ID
         templateParams,
-        "XissUhOcE2e-mSvv0" // Your EmailJS user ID
+        "XissUhOcE2e-mSvv0"   // your Public Key / User ID
       );
-
-      console.log("Email sent successfully:", response);
-      clearState();
+      setState(initialState);
       setMessageSent(true);
     } catch (err) {
-      console.error("Error sending email:", err);
+      console.error("EmailJS error:", err);
     }
   };
 
   return (
-    <main className="min-h-screen bg-white text-black py-20 px-6">
+    <main className="min-h-screen bg-white text-slate-900 py-16 px-4">
       <div className="max-w-4xl mx-auto">
+        {/* Page Title */}
         <motion.h1
-          className="text-4xl font-extrabold text-center mb-10 text-black"
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="text-4xl font-extrabold text-center mb-12"
         >
           Contact Us
         </motion.h1>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Form */}
           <form
             onSubmit={handleSubmit}
-            className="bg-[#f5f5f5] p-6 rounded-lg space-y-4"
+            className="space-y-4 bg-gray-50 p-6 rounded-lg shadow"
           >
-            <input
+            <motion.input
               type="text"
               name="name"
               placeholder="Your Name"
               required
-              className="w-full p-3 rounded-md bg-white border border-[#ccc] text-black placeholder-gray-400"
               value={name}
               onChange={handleChange}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.1 }}
+              className="w-full p-3 border border-gray-300 rounded"
             />
-            <input
+            <motion.input
               type="email"
               name="email"
               placeholder="Your Email"
               required
-              className="w-full p-3 rounded-md bg-white border border-[#ccc] text-black placeholder-gray-400"
               value={email}
               onChange={handleChange}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="w-full p-3 border border-gray-300 rounded"
             />
-            <textarea
+            <motion.textarea
               name="message"
               placeholder="Your Message"
               rows={5}
               required
-              className="w-full p-3 rounded-md bg-white border border-[#ccc] text-black placeholder-gray-400"
               value={message}
               onChange={handleChange}
-            ></textarea>
-            <button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="w-full p-3 border border-gray-300 rounded"
+            />
+            <motion.button
               type="submit"
-              className="w-full bg-[#D32F2F] hover:bg-red-700 text-white py-3 rounded-md font-semibold transition"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 rounded transition"
             >
               Send Message
-            </button>
+            </motion.button>
             {messageSent && (
-              <p className="text-green-400 text-sm mt-2">
-                Message Sent! Thank you for contacting us.
-              </p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="text-green-600 mt-2 text-center"
+              >
+                Message sent successfully!
+              </motion.p>
             )}
           </form>
 
-          <div className="space-y-6 text-sm text-black">
-            <div className="w-full mt-8">
-              <Image
-                src="/maps.png"
-                alt="Location Map"
-                className="w-full h-auto rounded-lg"
-                width={350}
-                height={350}
-              />
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+            className="space-y-6 text-gray-800"
+          >
+            <div>
+              <h2 className="text-2xl font-semibold mb-2">Office Address</h2>
+              Techno Park Industrial Estate 2, Block H9 No.16, Setu, BSD City<br/>
+              Tangerang Selatan, Banten 15314, Indonesia
             </div>
             <div>
-              <h1 className="text-bold text-[#D32F2F]">Office</h1>
-              Techno Park Industrial Estate 2 Block H 9 No 16 Setu, BSD City
-              <br />
-              Tangerang Selatan 15314 Indonesia
-              <br />
-              <br />
-              <strong className="text-[#D32F2F]">Phone:</strong> (+6221) 7568
-              2120 <br />
-              <strong className="text-[#D32F2F]">Email:</strong>{" "}
-              <a
-                href="mailto:marketing@reka-energi.com"
-                className="hover:underline text-black"
-              >
-                marketing@reka-energi.com
-              </a>
+              <h2 className="text-2xl font-semibold mb-2">Phone & Email</h2>
+              <p><strong>Phone:</strong> (+62) 21-7568-2120</p>
+              <p>
+                <strong>Email:</strong>{" "}
+                <a
+                  href="mailto:marketing@reka-energi.com"
+                  className="text-red-600 hover:underline"
+                >
+                  marketing@reka-energi.com
+                </a>
+              </p>
             </div>
-            {/* Image Section */}
-          </div>
+          </motion.div>
         </div>
       </div>
     </main>
